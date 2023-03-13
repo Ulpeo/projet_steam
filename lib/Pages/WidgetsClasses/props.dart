@@ -32,23 +32,113 @@ Widget searchbar(){
 
 Widget game(){
   return(
-  Row(
-    children: [
-      SvgPicture.asset('assets/images/empty_likes.svg'),
-      Column(
-        children: [
-          Text('Titre jeu', style: TextStyle(color: Colors.white),),
-          Text('nom editeur', style: TextStyle(color: Colors.white),),
-          Text('prix: 10€', style: TextStyle(color: Colors.white),),
-        ],
-      ),
-      Container(
-        color: const Color(0xFF636AF6) ,
-        child:
-          Text('En savoir plus', style: TextStyle(color: Colors.white),),
-      )
-    ],
+  Center(
 
+    child: (
+    Row(
+      children: [
+        SvgPicture.asset('assets/images/empty_likes.svg'),
+        Column(
+          children: [
+            Text('Titre jeu', style: TextStyle(color: Colors.white),),
+            Text('nom editeur', style: TextStyle(color: Colors.white),),
+            Text('prix: 10€', style: TextStyle(color: Colors.white),),
+          ],
+        ),
+        Container(
+
+          color: const Color(0xFF636AF6) ,
+          child:
+            Text('En savoir plus', style: TextStyle(color: Colors.white),),
+        )
+      ],
+
+    )
+    ),
+  )
+
+  );
+}
+
+Widget button(String mot){
+  return(
+  Container(
+    width: 400,
+    height: 45,
+    margin: const EdgeInsets.all(10.0),
+    child: TextButton(
+      style: TextButton.styleFrom(
+        backgroundColor: const Color(0xFF636AF6),
+
+      ),
+      onPressed: () {},
+      child: Text(
+        mot,
+        style: TextStyle(
+          color: Color(0xffffffff),
+        ),
+      ),
+    ),
+  )
+  );
+}
+
+
+
+
+Widget buttonCompte(){
+  return(
+      Container(
+        width: 400,
+        height: 45,
+        margin: const EdgeInsets.all(10.0),
+        decoration: ShapeDecoration(
+            color: const Color(0xFF636AF6),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+                side: BorderSide(
+                    width: 2,
+                    color:const Color(0xFF636AF6)
+                )
+            )
+        ),
+        child: TextButton(
+          style: TextButton.styleFrom(
+            backgroundColor: const Color(0xFF1A2025),
+
+          ),
+
+          onPressed: () {},
+          child: Text(
+            "Créer un nouveau coompte",
+            style: TextStyle(
+              color: Color(0xffffffff),
+            ),
+          ),
+        ),
+      )
+  );
+}
+
+Widget champText(String mot){
+  return(
+
+  Container(
+    width: 400,
+    height: 45,
+    margin: const EdgeInsets.all(10.0),
+    child: (
+        TextField(
+          //obscureText: true,
+          style: TextStyle(color: Colors.white,),
+          decoration: InputDecoration(
+            labelText: mot,
+            labelStyle: TextStyle(color: Colors.white,),
+            filled: true,
+            fillColor: const Color(0xFF1E262C),
+          ),
+        )
+    ),
   )
   );
 }
