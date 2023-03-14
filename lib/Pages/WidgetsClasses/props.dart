@@ -1,7 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 
 //-----------------------classes----------------------------------------------
 
@@ -25,6 +24,7 @@ Widget searchbar(){
           suffixIcon: Icon(Icons.search, color:const Color(0xFF636AF6)),
           filled: true,
           fillColor: const Color(0xFF1E262C),
+
         ),
       )
   );
@@ -60,7 +60,7 @@ Widget game(){
   );
 }
 
-Widget button(String mot){
+Widget button(String mot, BuildContext context, String page){
   return(
   Container(
     width: 400,
@@ -71,7 +71,10 @@ Widget button(String mot){
         backgroundColor: const Color(0xFF636AF6),
 
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pushNamed(context, page);
+
+      },
       child: Text(
         mot,
         style: TextStyle(
@@ -110,7 +113,7 @@ Widget buttonCompte(){
 
           onPressed: () {},
           child: Text(
-            "Créer un nouveau coompte",
+            "Créer un nouveau compte",
             style: TextStyle(
               color: Color(0xffffffff),
             ),
