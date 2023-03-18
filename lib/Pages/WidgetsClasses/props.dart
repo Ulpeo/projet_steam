@@ -65,7 +65,7 @@ Widget button(String mot, BuildContext context, String page){
   Container(
     width: 400,
     height: 45,
-    margin: const EdgeInsets.all(10.0),
+    margin: const EdgeInsets.fromLTRB(10,60,10,10),
     child: TextButton(
       style: TextButton.styleFrom(
         backgroundColor: const Color(0xFF636AF6),
@@ -89,7 +89,7 @@ Widget button(String mot, BuildContext context, String page){
 
 
 
-Widget buttonCompte(){
+Widget buttonCompte(BuildContext context){
   return(
       Container(
         width: 400,
@@ -111,7 +111,10 @@ Widget buttonCompte(){
 
           ),
 
-          onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/signUp');
+
+            },
           child: Text(
             "Créer un nouveau compte",
             style: TextStyle(
@@ -133,10 +136,11 @@ Widget champText(String mot){
     child: (
         TextField(
           //obscureText: true,
-          style: TextStyle(color: Colors.white,),
+
           decoration: InputDecoration(
-            labelText: mot,
-            labelStyle: TextStyle(color: Colors.white,),
+            label: Center(
+              child: Text(mot, style: TextStyle(color: Colors.white), ),
+            ),
             filled: true,
             fillColor: const Color(0xFF1E262C),
           ),

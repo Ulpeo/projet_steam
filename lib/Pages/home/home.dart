@@ -21,18 +21,22 @@ class _HomePageState extends State<HomePage> {
         title: Text("Accueil", style: TextStyle(fontFamily:'GoogleSans')),
           backgroundColor: const Color(0xFF1A2025),
         actions: [
-          IconButton(onPressed:(){} , icon: SvgPicture.asset("assets/images/like.svg")),
-          IconButton(onPressed:(){}, icon: SvgPicture.asset("assets/images/whishlist.svg")),
+          IconButton(onPressed:(){
+            Navigator.pushNamed(context, '/liked');
+          } , icon: SvgPicture.asset("assets/images/like.svg")),
+          IconButton(onPressed:(){
+            Navigator.pushNamed(context, '/whishlist');
+          }, icon: SvgPicture.asset("assets/images/whishlist.svg")),
         ],
       ),
 
-      body: SingleChildScrollView(
+      body: SingleChildScrollView( //listView.builder
         child: Column(
           children: [
               searchbar(),
               SvgPicture.asset('assets/images/Bitmap.svg'),
               Text('Titan Fall 2 ultimated edition', style: TextStyle(color: Colors.white),),
-              game(),
+              game(), //listview + card + stack pour limage en background
 
 
 

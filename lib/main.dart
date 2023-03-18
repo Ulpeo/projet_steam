@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:projet_steam/Pages/connexion/connexion.dart';
 import 'package:projet_steam/Pages/connexion/inscription.dart';
+import 'package:projet_steam/Pages/home/whishlist.dart';
 
+import 'Pages/connexion/mdp.dart';
 import 'Pages/home/home.dart';
+import 'Pages/home/like.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -33,6 +37,9 @@ class MyApp extends StatelessWidget {
           '/': (context) => HomePage(),
           '/signIn': (context) => Connexion(),
           '/signUp': (context) => Inscription(),
+          '/password': (context) => Password(),
+          '/liked': (context) => Liked(),
+          '/whishlist': (context) => Whishlist(),
         },
         initialRoute: '/');
 

@@ -20,7 +20,7 @@ class _InscriptionState extends State<Inscription> {
 
             Container(
               width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.all(10.0),
+              margin: const EdgeInsets.fromLTRB(10,50,10,10),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children:[
@@ -36,8 +36,8 @@ class _InscriptionState extends State<Inscription> {
                     champText('Mot de passe'),
                     champText('vérification du mot de passe'),
                     button("S'inscrire", context, '/signUp'),
-                    buttonCompte(),
-                    Text("Mot de passe oublié", style: TextStyle(color:const Color(0xFFAFB8BB), decoration: TextDecoration.underline), textAlign: TextAlign.center,)
+
+
 
                   ]
               ),
